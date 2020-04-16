@@ -1,4 +1,4 @@
-package ilk_server.DataModels;
+package com.wageesha.ilk_server.DataModels;
 
 
 import java.util.ArrayList;
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="Advertisememnts")
+@Document(collection="Advertisements")
 public class Advertisement {
 	
 	@Id
@@ -21,8 +21,12 @@ public class Advertisement {
 	private String status;
 	//@Indexed(direction = IndexDirection.ASCENDING)
 	private String timestamp;
-	
-	
+
+
+	public Advertisement(){
+
+	}
+
 	public Advertisement(String id, String userId, String category, String description, int price,
 						 Location itemLocation, ArrayList<String> photos, ArrayList<String> tags, String status, String timestamp) {
 		super();
@@ -38,8 +42,6 @@ public class Advertisement {
 		this.timestamp = timestamp;
 	}
 
-	
-	
 	public Advertisement(String id, String userId, String category, String description, Location itemLocation, ArrayList<String> photos,
 						 ArrayList<String> tags, String status, String timestamp) {
 		super();
@@ -53,7 +55,10 @@ public class Advertisement {
 		this.status = status;
 		this.timestamp = timestamp;
 	}
-	
+
+	public Advertisement(String userId, String category, String description) {
+	}
+
 	public String getId() {
 		return id;
 	}

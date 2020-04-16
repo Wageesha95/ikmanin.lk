@@ -1,6 +1,6 @@
-package ilk_server.Repositories;
+package com.wageesha.ilk_server.Repositories;
 
-import ilk_server.DataModels.Advertisement;
+import com.wageesha.ilk_server.DataModels.Advertisement;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

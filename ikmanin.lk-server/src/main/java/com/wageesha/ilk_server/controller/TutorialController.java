@@ -1,4 +1,4 @@
-package ilk_server.controller;
+package com.wageesha.ilk_server.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.Optional;
 
 //@CrossOrigin(origins = "http://localhost:8081")
-@RestController
-@RequestMapping("/api")
+//@RestController
+//@RequestMapping("/api")
 public class TutorialController {
-
+/*
     @Autowired
     TutorialRepository tutorialRepository;
 
@@ -111,5 +111,5 @@ public class TutorialController {
             return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
         }
     }
-
+*/
 }

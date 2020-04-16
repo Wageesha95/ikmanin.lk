@@ -1,4 +1,4 @@
-package ilk_server.DataModels;
+package com.wageesha.ilk_server.DataModels;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

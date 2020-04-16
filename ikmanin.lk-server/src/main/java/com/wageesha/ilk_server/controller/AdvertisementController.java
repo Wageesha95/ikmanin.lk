@@ -1,7 +1,7 @@
-package ilk_server.controller;
+package com.wageesha.ilk_server.controller;
 
-import ilk_server.DataModels.Advertisement;
-import ilk_server.Services.AdvertisementService;
+import com.wageesha.ilk_server.DataModels.Advertisement;
+import com.wageesha.ilk_server.Services.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +25,11 @@ public class AdvertisementController {
 
     @PutMapping("/advertisement/{id}")
     public ResponseEntity<Advertisement> updateAdvertisementById(@PathVariable("id") String id, @RequestBody Advertisement advertisement) {
-        return advertisementService.updateAdvertisementById(advertisement);
+        return advertisementService.updateAdvertisementById(id,advertisement);
+    }
+
+    @PostMapping("/Advertisements")
+    public ResponseEntity<Advertisement> createAdvertisement(@RequestBody Advertisement advertisement) {
+        return advertisementService.createAdvertisement(advertisement);
     }
 }
