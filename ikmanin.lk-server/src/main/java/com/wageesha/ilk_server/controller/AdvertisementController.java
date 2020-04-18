@@ -3,11 +3,16 @@ package com.wageesha.ilk_server.controller;
 import com.wageesha.ilk_server.DataModels.Advertisement;
 import com.wageesha.ilk_server.Services.AdvertisementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
+@RestController
+@RequestMapping("/api/test")
 public class AdvertisementController {
 
     @Autowired
@@ -23,13 +28,25 @@ public class AdvertisementController {
         return advertisementService.getAdvertisementById(id);
     }
 
+    @PostMapping("/advertisement/{user-id}")
+    //@PreAuthorize("hasRole('USER')")
+    public ResponseEntity<Advertisement> createAdvertisement(@PathVariable("user-id") String userId,@RequestBody Advertisement advertisement) {
+        return advertisementService.createAdvertisement(userId,advertisement);
+    }
+
     @PutMapping("/advertisement/{id}")
+   // @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public ResponseEntity<Advertisement> updateAdvertisementById(@PathVariable("id") String id, @RequestBody Advertisement advertisement) {
         return advertisementService.updateAdvertisementById(id,advertisement);
     }
 
-    @PostMapping("/Advertisements")
-    public ResponseEntity<Advertisement> createAdvertisement(@RequestBody Advertisement advertisement) {
-        return advertisementService.createAdvertisement(advertisement);
+    @DeleteMapping("/advertisement/{id}")
+    public ResponseEntity<HttpStatus> deleteAdvertisementById(@PathVariable("id") String id) {
+        return advertisementService.deleteAdvertisement(id);
+    }
+
+    @DeleteMapping("/advertisements")
+    public ResponseEntity<HttpStatus> deleteAllAdvertisements() {
+        return advertisementService.deleteAllAdvertisements();
     }
 }

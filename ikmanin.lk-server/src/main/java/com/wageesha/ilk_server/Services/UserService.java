@@ -8,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@Component
-public class UserService {
+
+public interface UserService {
+
+
 /*
     @Autowired
     private UserRepository userRepository;
