@@ -2,7 +2,6 @@ package com.wageesha.ilk_server.DataModels;
 
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -28,6 +27,7 @@ public class Advertisement {
 	private Integer mileage;
 	private Boolean negotiability;
 	private String description;
+	private String contactName;
 	private String phoneNumber;
 	private String status;
 	private LocalDateTime createdTimestamp;
@@ -40,8 +40,8 @@ public class Advertisement {
 	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
-						 Boolean negotiability, String description, String phoneNumber, String status,
-						 LocalDateTime createdTimestamp,LocalDateTime lastUpdatedTimestamp) {
+						 Boolean negotiability, String description, String contactName, String phoneNumber, String status,
+						 LocalDateTime createdTimestamp, LocalDateTime lastUpdatedTimestamp) {
 		this.userId = userId;
 		this.category = category;
 		this.bio = bio;
@@ -57,6 +57,7 @@ public class Advertisement {
 		this.mileage = mileage;
 		this.negotiability = negotiability;
 		this.description = description;
+		this.contactName = contactName;
 		this.phoneNumber = phoneNumber;
 		this.status = status;
 		this.createdTimestamp = createdTimestamp;
@@ -66,7 +67,7 @@ public class Advertisement {
 	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
-						 Boolean negotiability, String description, String phoneNumber, String status,
+						 Boolean negotiability, String description, String contactName, String phoneNumber, String status,
 						 LocalDateTime createdTimestamp) {
 		this.userId = userId;
 		this.category = category;
@@ -83,6 +84,7 @@ public class Advertisement {
 		this.mileage = mileage;
 		this.negotiability = negotiability;
 		this.description = description;
+		this.contactName = contactName;
 		this.phoneNumber = phoneNumber;
 		this.status = status;
 		this.createdTimestamp = createdTimestamp;
@@ -249,6 +251,13 @@ public class Advertisement {
 		this.lastUpdatedTimestamp = lastUpdatedTimestamp;
 	}
 
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
 }
 
 

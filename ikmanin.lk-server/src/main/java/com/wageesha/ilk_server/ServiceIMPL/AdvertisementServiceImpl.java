@@ -1,24 +1,17 @@
 package com.wageesha.ilk_server.ServiceIMPL;
 
 import com.wageesha.ilk_server.DataModels.Advertisement;
-import com.wageesha.ilk_server.DataModels.User;
 import com.wageesha.ilk_server.Repositories.AdvertisementRepository;
 import com.wageesha.ilk_server.Repositories.UserRepository;
 import com.wageesha.ilk_server.Services.AdvertisementService;
-import com.wageesha.ilk_server.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDateTime;
-import java.time.Year;
-import java.time.ZoneId;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -119,6 +112,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
             _advertisement.setMileage(advertisement.getMileage());
             _advertisement.setNegotiability(advertisement.getNegotiability());
             _advertisement.setDescription(advertisement.getDescription());
+            _advertisement.setContactName(advertisement.getContactName());
             _advertisement.setPhoneNumber(advertisement.getPhoneNumber());
             _advertisement.setStatus(advertisement.getStatus());
             _advertisement.setLastUpdatedTimestamp(LocalDateTime.now());
@@ -136,7 +130,7 @@ public class AdvertisementServiceImpl implements AdvertisementService {
             Advertisement _advertisement = new Advertisement(userId, advertisement.getCategory(),advertisement.getBio(), advertisement.getPrice(),
                     advertisement.getItemLocation(),advertisement.getPhotos(),advertisement.getTags(),advertisement.getCondition(),advertisement.getBrand(),
                     advertisement.getModel(),advertisement.getModelYear(),advertisement.getEngineCapacity(),advertisement.getMileage(),
-                    advertisement.getNegotiability(),advertisement.getDescription(),advertisement.getPhoneNumber(),advertisement.getStatus(),LocalDateTime.now());
+                    advertisement.getNegotiability(),advertisement.getDescription(), advertisement.getContactName(), advertisement.getPhoneNumber(),advertisement.getStatus(),LocalDateTime.now());
 
             advertisementRepository.save(_advertisement);
             return new ResponseEntity<>(_advertisement, HttpStatus.CREATED);
