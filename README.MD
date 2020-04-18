@@ -7,6 +7,6 @@
 
 ## Project Backend
 
--First run 'mvn spring-boot:run'
+ run `mvn spring-boot:run`
 
 ### How to start the Project
