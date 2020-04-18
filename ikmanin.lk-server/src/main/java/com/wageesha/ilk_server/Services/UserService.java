@@ -8,22 +8,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+
 
 public interface UserService {
 
 
-/*
-    @Autowired
-    private UserRepository userRepository;
 
-    public ResponseEntity<User> createUser(@RequestBody User user) {
-        try {
-            User _user = userRepository.save(new User(user.getFirstName(),user.getLastName(),user.getEmail(),user.getPassword()));
+    //ResponseEntity<User> findUserById(String id);
+    ResponseEntity<User> updateUserById(String id, User user);
+    ResponseEntity<HttpStatus>deleteUserByUserId(String userId);
+    ResponseEntity<List<User>>getAllUsers(String role);
+    ResponseEntity<HttpStatus>deleteAllUserUsers();
 
-            return new ResponseEntity<>(_user, HttpStatus.CREATED);
 
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.EXPECTATION_FAILED);
-        }
-    }*/
 }

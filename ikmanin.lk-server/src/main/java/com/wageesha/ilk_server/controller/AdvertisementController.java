@@ -34,6 +34,18 @@ public class AdvertisementController {
         return advertisementService.createAdvertisement(userId,advertisement);
     }
 
+    @DeleteMapping("/{user-id}/advertisements")
+    //@PreAuthorize("hasRole('USER')")
+    public ResponseEntity<HttpStatus> deleteAdvertisementsByUserId(@PathVariable("user-id") String userId) {
+        return advertisementService.deleteAdvertisementsByUserId(userId);
+    }
+
+    @GetMapping("/{user-id}/advertisements")
+    //@PreAuthorize("hasRole('USER')")
+    public ResponseEntity<List<Advertisement>> getAdvertisementsByUserId(@PathVariable("user-id") String userId) {
+        return advertisementService.getAdvertisementsByUserId(userId);
+    }
+
     @PutMapping("/advertisement/{id}")
    // @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public ResponseEntity<Advertisement> updateAdvertisementById(@PathVariable("id") String id, @RequestBody Advertisement advertisement) {

@@ -1,6 +1,7 @@
 package com.wageesha.ilk_server.Services;
 
 import com.wageesha.ilk_server.DataModels.Advertisement;
+import com.wageesha.ilk_server.DataModels.User;
 import com.wageesha.ilk_server.Repositories.AdvertisementRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,10 @@ import java.util.Optional;
 public interface AdvertisementService {
 
     ResponseEntity<List<Advertisement>> getAllAdvertisements(String category);
+
+    ResponseEntity<List<Advertisement>> getAdvertisementsByUserId(String userId);
+
+    ResponseEntity<HttpStatus> deleteAdvertisementsByUserId(String userId);
 
     ResponseEntity<Advertisement> getAdvertisementById(String id);
 

@@ -63,6 +63,40 @@ public class AdvertisementServiceImpl implements AdvertisementService {
         }
     }
 
+    public ResponseEntity<List<Advertisement>> getAdvertisementsByUserId(String userId) {
+
+        try {
+            List<Advertisement> advertisements = new ArrayList<Advertisement>();
+
+            advertisementRepository.findByUserId(userId).forEach(advertisements::add);
+
+            if (advertisements.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(advertisements, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+
+    }
+
+    public ResponseEntity<HttpStatus> deleteAdvertisementsByUserId(String userId) {
+        try{
+            List<Advertisement> advertisements = new ArrayList<Advertisement>();
+
+            advertisementRepository.findByUserId(userId).forEach(advertisements::add);
+            advertisementRepository.deleteAll(advertisements);
+
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.EXPECTATION_FAILED);
+        }
+
+    }
+
     public ResponseEntity<Advertisement> updateAdvertisementById(String id, Advertisement advertisement) {
 
         Optional<Advertisement> advertisementData = advertisementRepository.findById(id);
@@ -87,7 +121,6 @@ public class AdvertisementServiceImpl implements AdvertisementService {
             _advertisement.setDescription(advertisement.getDescription());
             _advertisement.setPhoneNumber(advertisement.getPhoneNumber());
             _advertisement.setStatus(advertisement.getStatus());
-            Date date = new Date();
             _advertisement.setLastUpdatedTimestamp(LocalDateTime.now());
 
 
@@ -99,9 +132,8 @@ public class AdvertisementServiceImpl implements AdvertisementService {
 
     public ResponseEntity<Advertisement> createAdvertisement(String userId, Advertisement advertisement) {
         try {
-            User user = userRepository.findUserById(userId);
 
-            Advertisement _advertisement = new Advertisement(user, advertisement.getCategory(),advertisement.getBio(), advertisement.getPrice(),
+            Advertisement _advertisement = new Advertisement(userId, advertisement.getCategory(),advertisement.getBio(), advertisement.getPrice(),
                     advertisement.getItemLocation(),advertisement.getPhotos(),advertisement.getTags(),advertisement.getCondition(),advertisement.getBrand(),
                     advertisement.getModel(),advertisement.getModelYear(),advertisement.getEngineCapacity(),advertisement.getMileage(),
                     advertisement.getNegotiability(),advertisement.getDescription(),advertisement.getPhoneNumber(),advertisement.getStatus(),LocalDateTime.now());

@@ -1,24 +1,19 @@
 package com.wageesha.ilk_server.DataModels;
 
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.Year;
-import java.util.ArrayList;
-
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.IndexDirection;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Document(collection="Advertisements")
 public class Advertisement {
 
 	@Id
 	private String id;
-	@DBRef
-	private User user;
+	private String userId;
 	private String category;
 	private String bio;
 	private int price;
@@ -42,12 +37,12 @@ public class Advertisement {
 
 	}
 
-	public Advertisement(User user, String category, String bio, int price, Location itemLocation,
+	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
 						 Boolean negotiability, String description, String phoneNumber, String status,
 						 LocalDateTime createdTimestamp,LocalDateTime lastUpdatedTimestamp) {
-		this.user = user;
+		this.userId = userId;
 		this.category = category;
 		this.bio = bio;
 		this.price = price;
@@ -68,12 +63,12 @@ public class Advertisement {
 		this.lastUpdatedTimestamp=lastUpdatedTimestamp;
 	}
 
-	public Advertisement(User user, String category, String bio, int price, Location itemLocation,
+	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
 						 Boolean negotiability, String description, String phoneNumber, String status,
 						 LocalDateTime createdTimestamp) {
-		this.user = user;
+		this.userId = userId;
 		this.category = category;
 		this.bio = bio;
 		this.price = price;
@@ -102,12 +97,12 @@ public class Advertisement {
 		this.id = id;
 	}
 
-	public User getUser() {
-		return user;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUser(String userId) {
+		this.userId = userId;
 	}
 
 	public String getCategory() {

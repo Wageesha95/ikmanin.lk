@@ -1,0 +1,298 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ikmanin.lk",
+		"_postman_id": "45880932-81d3-36a8-137f-0ddecf199c5c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Advertisement-APIs",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:8080/api/test/advertisement",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisement/5e98d71de41f9a66194bea74",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTU4NzA0MjM4NCwiZXhwIjoxNTg3MTI4Nzg0fQ.XhHhMV_4sQGszOs8iYjRwoTWmzKVBwZYk24EzowUnK2R8k99K7A91dP4onkdlUw_KuBG8MmL4-dWZQdSh6BJ-w",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"Van\",\r\n    \"bio\":\"A new bike, less usage\",\r\n    \"price\": \"50000\",\r\n    \"itemLocation\":{\r\n    \t\"town\" : \"Meegoda\",\r\n\t\t\"city\":\"Homagama\",\r\n\t\t\"district\" :\"COL\"\r\n    } ,\r\n    \"photos\": [\"pqr\",\"ijk\"],\r\n    \"tags\": [\"abc\",\"def\"],\r\n    \"condition\":\"new\",\r\n    \"brand\":\"bajaj\",\r\n    \"model\":\"ct100\",\r\n    \"modelYear\":\"2005\",\r\n    \"engineCapacity\":\"100\",\r\n    \"mileage\":\"100000\",\r\n    \"negotiability\":\"true\",\r\n    \"description\": \"des of bike\",\r\n    \"phoneNumber\":\"0773200982\",\r\n     \"status\": \"Available\"\r\n}"
+						},
+						"description": "create an advertisement"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/test/advertisement/{id}",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisement/5e98be3d47e52e23cdb00f6f",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "Get an advertisement by Id"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/test/advertisement/{id}",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisement/5e99f6097129734a82a82f24",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImlhdCI6MTU4NzA0MjM4NCwiZXhwIjoxNTg3MTI4Nzg0fQ.XhHhMV_4sQGszOs8iYjRwoTWmzKVBwZYk24EzowUnK2R8k99K7A91dP4onkdlUw_KuBG8MmL4-dWZQdSh6BJ-w",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"user3\",\r\n    \"category\": \"Van\",\r\n    \"description\": \"des of bike\",\r\n    \"price\": \"50000\",\r\n    \"itemLocation\":{\r\n    \t\"town\" : \"Meegoda\",\r\n\t\t\"city\":\"Homagama\",\r\n\t\t\"district\" :\"COL\",\r\n\t\t\"province\":\"Western\"\r\n    } ,\r\n    \"photos\": [\"pqr\",\"ijk\"],\r\n    \"tags\": [\"abc\",\"def\"],\r\n    \"status\": \"Available\"\r\n}"
+						},
+						"description": "Update a advertisement by Id"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all advertisements",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisements",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "http://localhost:8080/api/test/advertisements"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/api/test/advertisements?category=bike",
+					"request": {
+						"url": {
+							"raw": "http://localhost:8080/api/test/advertisements?category=bike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"test",
+								"advertisements"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "bike",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "get all advertisements by category"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all advertisements",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisement/5e9a11f75aadde39df6cc068",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "http://localhost:8080/api/test/advertisements"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete advertisement by id",
+					"request": {
+						"url": "http://localhost:8080/api/test/advertisement/5e9a164ce5dc031a3d248508",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "http://localhost:8080/api/test/advertisement/{id}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get advertisements by user",
+					"request": {
+						"url": "http://localhost:8080/api/test/5e98d71de41f9a66194bea74/advertisements",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "http://localhost:8080/api/test/{userId}}/advertisements"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete advertisements by user",
+					"request": {
+						"url": "http://localhost:8080/api/test/5e98d71de41f9a66194bea74/advertisements",
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"description": "http://localhost:8080/api/test/{userId}/advertisements"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User-APIs",
+			"description": "",
+			"item": [
+				{
+					"name": "Create new user/ signup new user",
+					"request": {
+						"url": "http://localhost:8080/api/auth/signup",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"user12\",\n\t\"email\":\"user12@gmail.com\",\n\t\"password\":\"000000\",\n\t\"roles\": [\"user\"]\n}"
+						},
+						"description": "Update/complete the user/user account"
+					},
+					"response": []
+				},
+				{
+					"name": "Update user/complete user account  ---- http://localhost:8080/api/auth/user/{idd}",
+					"request": {
+						"url": "http://localhost:8080/api/auth/user/5e9b27c9291b70361dc8c7ec",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\" : \"Thilina\",\r\n    \"lastName\" : \"Liyanage\",\r\n    \"userLocation\" : {\r\n        \"town\" : \"Godagama\",\r\n        \"city\" : \"Homagama\",\r\n        \"district\" : \"COL\"\r\n    },\r\n    \"profilePicture\" : \"Strings of profilePicture\",\r\n    \"emailVerification\" : false\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "get all  user accounts  ---- http://localhost:8080/api/auth/users",
+					"request": {
+						"url": "http://localhost:8080/api/auth/users",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\" : \"Thilina\",\r\n    \"lastName\" : \"Liyanage\",\r\n    \"userLocation\" : {\r\n        \"town\" : \"Godagama\",\r\n        \"city\" : \"Homagama\",\r\n        \"district\" : \"COL\"\r\n    },\r\n    \"profilePicture\" : \"Strings of profilePicture\",\r\n    \"emailVerification\" : false\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "delete all user_role  user accounts  ---- http://localhost:8080/api/auth/users copy",
+					"request": {
+						"url": "http://localhost:8080/api/auth/users",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\" : \"Thilina\",\r\n    \"lastName\" : \"Liyanage\",\r\n    \"userLocation\" : {\r\n        \"town\" : \"Godagama\",\r\n        \"city\" : \"Homagama\",\r\n        \"district\" : \"COL\"\r\n    },\r\n    \"profilePicture\" : \"Strings of profilePicture\",\r\n    \"emailVerification\" : false\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user account ----  http://localhost:8080/api/auth/user/{id}",
+					"request": {
+						"url": "http://localhost:8080/api/auth/user/5e9b27c9291b70361dc8c7ec",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Origin",
+								"value": "http://localhost:8081",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"firstName\" : \"Thilina\",\r\n    \"lastName\" : \"Liyanage\",\r\n    \"userLocation\" : {\r\n        \"town\" : \"Godagama\",\r\n        \"city\" : \"Homagama\",\r\n        \"district\" : \"COL\"\r\n    },\r\n    \"profilePicture\" : \"Strings of profilePicture\",\r\n    \"emailVerification\" : false\r\n}"
+						},
+						"description": "http://localhost:8080/api/auth/user/{id}"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

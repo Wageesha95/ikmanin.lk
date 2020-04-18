@@ -8,6 +8,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -35,14 +36,25 @@ public class User {
 
 	private String firstName;
 	private String lastName;
-	private Date DoB;
 	private Location userLocation;
 	private String profilePicture;
 	private Boolean emailVerification;
-	private Date accountCreatedDate;
+	private LocalDate accountCreatedDate;
+
 
 
 	public User() {
+	}
+
+	public User( String firstName, String lastName,
+				 Location userLocation, String profilePicture, Boolean emailVerification, LocalDate accountCreatedDate) {
+
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userLocation = userLocation;
+		this.profilePicture = profilePicture;
+		this.emailVerification = emailVerification;
+		this.accountCreatedDate = accountCreatedDate;
 	}
 
 	public User(String username, String email, String password) {
@@ -89,5 +101,53 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public Location getUserLocation() {
+		return userLocation;
+	}
+
+	public void setUserLocation(Location userLocation) {
+		this.userLocation = userLocation;
+	}
+
+	public String getProfilePicture() {
+		return profilePicture;
+	}
+
+	public void setProfilePicture(String profilePicture) {
+		this.profilePicture = profilePicture;
+	}
+
+	public Boolean getEmailVerification() {
+		return emailVerification;
+	}
+
+	public void setEmailVerification(Boolean emailVerification) {
+		this.emailVerification = emailVerification;
+	}
+
+	public LocalDate getAccountCreatedDate() {
+		return accountCreatedDate;
+	}
+
+	public void setAccountCreatedDate(LocalDate accountCreatedDate) {
+		this.accountCreatedDate = accountCreatedDate;
 	}
 }
