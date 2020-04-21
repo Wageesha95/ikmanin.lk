@@ -9,10 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import 'hammerjs';
+import { SlideshowComponent } from './slideshow/slideshow.component';
+import { LoginComponent } from './login/login.component';
+import { FilterComponent } from './filter/filter.component';
+import { AdvertisementsComponent } from './advertisements/advertisements.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SlideshowComponent,
+    LoginComponent,
+    FilterComponent,
+    AdvertisementsComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,
