@@ -1,9 +1,9 @@
-
-  <header>
-      <mat-toolbar color="primary"><span>ikman-lk <app-login></app-login></span></mat-toolbar>
+<div style="background-color:rgba(224, 228, 230, 0.39)" >
+  <header> 
+    <app-header></app-header>
   </header>
 
-  <div class="container-flud">
+  <div class="container-flud" >
 
     <div class="container">
       <app-slideshow></app-slideshow>
@@ -15,10 +15,12 @@
       <div class="row">
        <div class="col-12 col-sm-4">
           <app-filter></app-filter>
+          <br>
+          <app-social-media></app-social-media>
+          <br>
          </div>
 
         <div class="col-12 col-sm-8">
-         <mat-toolbar color="warn"><span>ikman-lk</span></mat-toolbar>
           <app-advertisements></app-advertisements>
          </div>
      </div>
@@ -26,5 +28,6 @@
   </div>
 
     <footer >
-        <mat-toolbar color="primary" ><span>footer</span></mat-toolbar>
+        <app-footer></app-footer>
     </footer>
+  </div>

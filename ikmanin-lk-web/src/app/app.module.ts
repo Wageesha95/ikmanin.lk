@@ -14,6 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { FilterComponent } from './filter/filter.component';
 import { AdvertisementsComponent } from './advertisements/advertisements.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { SocialMediaComponent } from './social-media/social-media.component';
     LoginComponent,
     FilterComponent,
     AdvertisementsComponent,
-    SocialMediaComponent
+    SocialMediaComponent,
+    HeaderComponent,
+    FooterComponent,
+    ProfileComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
