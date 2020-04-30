@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+//import { HttpClient } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -18,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule
+    /*,
+    HttpClient*/
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,16 @@
-<div>
+<div *ngIf="selectedAd">
+<div class="card mb-3">
+    <img src="http://www.wearemoviegeeks.com/wp-content/uploads/WTCLibertyStatePark-HighRes-PhotoCreditErikaKoop-012.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{selectedAd.brand}}-{{selectedAd.model}}</h5>
+     <!-- <h5 class="card-title">{{selectedAd.brand | uppercase}}-{{selectedAd.model}}</h5>-->
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+<div> 
   <hr>
     <ul class="nav nav-tabs nav-fill bg-light fixed">
         <li class="nav-item">
@@ -16,21 +28,35 @@
 <hr>
 <div class="row row-cols-1 row-cols-md-1">
 
-<div class="card mb-3">
+<div class="card mb-3" *ngFor="let advertisement of advertisements" (click)="onSelect(advertisement)">
   <div class="row no-gutters">
+
     <div class="col-md-4">
         <img src="http://www.wearemoviegeeks.com/wp-content/uploads/WTCLibertyStatePark-HighRes-PhotoCreditErikaKoop-012.jpg" class="card-img" alt="...">
       </div>
+
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h5 class="card-title">{{advertisement.brand | uppercase}}-{{advertisement.model}}</h5>
+        <p class="card-text">{{advertisement.bio}}</p>
+
+        <div class="row">
+            <div class="col-12 col-sm-8">
+              <p class="card-text"><small class="text-muted">Last updated on {{advertisement.lastUpdatedTime| date:'medium'}}</small></p>
+              </div>
+            <div class="col-12 col-sm-4">
+              <button type="button" class="btn btn-info btn-sm" (click)="onSelect(advertisement)">More Details</button>
+              </div>
+         </div>
+
+        </div>
       </div>
+
     </div>
   </div>
-</div>
 
+</div>
+<!--
 <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">
@@ -40,7 +66,7 @@
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <p class="card-text"><small class="text-muted">Last updated on {{lastUpdatedTime | date:'medium'}}</small></p>
         </div>
       </div>
     </div>
@@ -105,6 +131,7 @@
               </div>
             </div>
           </div>
+    -->
           
 
       <nav aria-label="Page navigation example">
