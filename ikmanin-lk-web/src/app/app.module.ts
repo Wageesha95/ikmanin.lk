@@ -19,7 +19,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HomeComponent } from './home/home.component';
 
+import { AdvertisementService } from './services/advertisement-services/advertisement.service' 
+import { HttpClient } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -32,18 +35,18 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
-    /*,
-    HttpClient*/
+    FlexLayoutModule,
+    HttpClient
   ],
-  providers: [],
+  providers: [AdvertisementService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

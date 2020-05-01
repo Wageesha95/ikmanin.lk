@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 const url = "http://localhost:8080/api/test/"
 
@@ -9,12 +9,12 @@ const url = "http://localhost:8080/api/test/"
 export class AdvertisementService {
 
   constructor(
-  //  private http:HttpClient
+    private http:HttpClient
   ) { }
 
 
-/*
+
   getAllAdvertisements(){
     return this.http.get('http://localhost:8080/api/test/advertisements');
-  }*/
+  }
 }

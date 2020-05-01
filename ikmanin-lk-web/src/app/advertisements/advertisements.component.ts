@@ -95,14 +95,17 @@ export class AdvertisementsComponent implements OnInit {
   advertisements = Advertisements;
   
   constructor(
-	//	private advertisementService : AdvertisementService
+	private advertisementService : AdvertisementService
 	) { }
 
   ngOnInit(): void {
+
+		this.getAllAdvertisements();		
 	}
 	
 	getAllAdvertisements(){
-	//	console.log(this.advertisementService.getAllAdvertisements());
+		console.log("abc");
+	//console.log(this.advertisementService.getAllAdvertisements());
 	}
 
   onSelect(selectedAdvertisement:Advertisement){

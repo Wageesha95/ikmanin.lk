@@ -3,31 +3,7 @@
     <app-header></app-header>
   </header>
 
-  <div class="container-flud" >
-
-    <div class="container">
-      <app-slideshow></app-slideshow>
-      <mat-toolbar color="primary" style="text-align: justify"><span>we care always</span> 
-        <app-sign-up></app-sign-up>
-        <app-login></app-login></mat-toolbar>
-    </div>
-
-    <div class="container">
-
-      <div class="row">
-       <div class="col-12 col-sm-4">
-          <app-filter></app-filter>
-          <br>
-          <app-social-media></app-social-media>
-          <br>
-         </div>
-
-        <div class="col-12 col-sm-8">
-          <app-advertisements></app-advertisements>
-         </div>
-     </div>
-
-  </div>
+  <router-outlet></router-outlet>
 
     <footer >
         <app-footer></app-footer>
