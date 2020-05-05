@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Advertisement} from '../data-models/Advertisement';
-import { AdvertisementService } from '../services/advertisement-services/advertisement.service';
+import {Advertisement} from './../../data-models/Advertisement';
+import { AdvertisementService } from './../../services/advertisement-services/advertisement.service';
 
 const Advertisements : Advertisement[] = [
     

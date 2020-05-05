@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
-
+import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -10,19 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import 'hammerjs';
-import { SlideshowComponent } from './slideshow/slideshow.component';
-import { LoginComponent } from './login/login.component';
-import { FilterComponent } from './filter/filter.component';
-import { AdvertisementsComponent } from './advertisements/advertisements.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { ProfileComponent } from './profile/profile.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { HomeComponent } from './home/home.component';
+import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { LoginComponent } from './components/login/login.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { AdvertisementsComponent } from './components/advertisements/advertisements.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HomeComponent } from './components/home/home.component';
 
-import { AdvertisementService } from './services/advertisement-services/advertisement.service' 
-import { HttpClient } from '@angular/common/http'
+import { AdvertisementService } from './services/advertisement-services/advertisement.service';
+import { AdvertisementViewerComponent } from './components/advertisement-viewer/advertisement-viewer.component' 
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { HttpClient } from '@angular/common/http'
     FooterComponent,
     ProfileComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    AdvertisementViewerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +45,7 @@ import { HttpClient } from '@angular/common/http'
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
-    HttpClient
+    HttpClientModule
   ],
   providers: [AdvertisementService],
   bootstrap: [AppComponent]

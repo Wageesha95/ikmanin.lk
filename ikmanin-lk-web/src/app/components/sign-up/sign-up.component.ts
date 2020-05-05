@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserBasic} from '../data-models/UserBasic';
+import {UserBasic} from './../../data-models/UserBasic';
 
 @Component({
   selector: 'app-sign-up',
