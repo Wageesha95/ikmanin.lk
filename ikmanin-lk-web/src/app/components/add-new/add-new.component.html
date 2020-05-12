@@ -1,0 +1,216 @@
+
+<hr> <hr> <hr>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+  </head>
+
+
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Sell your Vehicle here!</h1>
+        <p class="lead">Welcome! Let's post your ad. Begin by filling the following data.</p>
+      </div>
+    </div>
+    <div class="container">
+
+    <form>
+
+      <div class="form-group row">
+        <label for="category" class="col-6 col-form-label">Category</label>
+        <div class="col-6">
+          <select id="category" name="category" class="custom-select" required="required">
+            <option value="Cars">Cars</option>
+            <option value="Motorbikes &amp; Scooters">Motorbikes &amp; Scooters</option>
+            <option value="Three Wheelers">Three Wheelers</option>
+            <option value="Bicycles">Bicycles</option>
+            <option value="Vans">Vans</option>
+            <option value="Buses">Buses</option>
+            <option value="Lorries">Lorries</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="bio" class="col-6 col-form-label">Bio</label>
+        <div class="col-6">
+          <textarea id="bio" name="bio" cols="40" rows="5" class="form-control" required="required"></textarea>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="price" class="col-6 col-form-label">Price</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Rs.</div>
+            </div>
+            <input id="price" name="price" placeholder="Enter the Price" type="text" class="form-control" required="required">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="itemLocation" class="col-6 col-form-label">Location</label>
+        <div class="col-6">
+          <select id="itemLocation" name="itemLocation" class="custom-select" required="required">
+            <option value="Colombo">Colombo</option>
+            <option value="Gampaha">Gampaha</option>
+            <option value="Kalutara">Kalutara</option>
+            <option value="Kandy">Kandy</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="condition" class="col-6 col-form-label">Condition</label>
+        <div class="col-6">
+          <select id="condition" name="condition" class="custom-select" required="required">
+            <option value="">Brand New</option>
+            <option value="">Used</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="brand" class="col-6 col-form-label">Brand</label>
+        <div class="col-6">
+          <select id="brand" name="brand" required="required" class="custom-select">
+            <option value="Benz">Benz</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Maruti">Maruti</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="model" class="col-6 col-form-label">Model</label>
+        <div class="col-6">
+          <input id="model" name="model" placeholder="Enter the Model" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="modelYear" class="col-6 col-form-label">Model Year</label>
+        <div class="col-6">
+          <input id="modelYear" name="modelYear" placeholder="2020" type="text" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="engineCapacity" class="col-6 col-form-label">Engine Capacity</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">cc</div>
+            </div>
+            <input id="engineCapacity" name="engineCapacity" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="mileage" class="col-6 col-form-label">Mileage</label>
+        <div class="col-6">
+          <input id="mileage" name="mileage" placeholder="Enter the Mileage" type="text" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-6">Negotiability</label>
+        <div class="col-6">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name=" negotiability" id=" negotiability_0" type="radio" class="custom-control-input" value="1" required="required">
+            <label for=" negotiability_0" class="custom-control-label">Yes</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name=" negotiability" id=" negotiability_1" type="radio" class="custom-control-input" value="0" required="required" checked="checked">
+            <label for=" negotiability_1" class="custom-control-label">No</label>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="description " class="col-6 col-form-label">Description</label>
+        <div class="col-6">
+          <textarea id="description " name="description " cols="40" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="contactName" class="col-6 col-form-label">Contact Name</label>
+        <div class="col-6">
+          <input id="contactName" name="contactName" type="text" class="form-control" required="required">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="phoneNumber" class="col-6 col-form-label">Phone Number</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-phone"></i>
+              </div>
+            </div>
+            <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" required="required">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="form-group row">
+        <label for="tags" class="col-6 col-form-label">Tags</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-hashtag"></i>
+              </div>
+            </div>
+            <input id="tags" name="tags" placeholder="Enter your Tags here" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+        <div class="form-group row">
+          <div class="offset-6 col-6">
+          <label for="exampleFormControlFile1">Upload Vehicle photo</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <div class="offset-6 col-6">
+          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+  </body>
+</html>
