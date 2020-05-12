@@ -1,14 +1,14 @@
-<div *ngIf="selectedAd">
+<!--<div *ngIf="selectedAd">
 <div class="card mb-3">
     <img src="http://www.wearemoviegeeks.com/wp-content/uploads/WTCLibertyStatePark-HighRes-PhotoCreditErikaKoop-012.jpg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{selectedAd.brand}}-{{selectedAd.model}}</h5>
+      <h5 class="card-title">{{selectedAd.brand}}-{{selectedAd.model}}</h5>-->
      <!-- <h5 class="card-title">{{selectedAd.brand | uppercase}}-{{selectedAd.model}}</h5>-->
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  <!--    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
-</div>
+</div>-->
 
 <div> 
   <hr>
@@ -45,12 +45,12 @@
               <p class="card-text"><small class="text-muted">Last updated on {{advertisement.lastUpdatedTime| date:'medium'}}</small></p>
               </div>
             <div class="col-12 col-sm-4">
-              <button type="button" class="btn btn-info btn-sm" (click)="onSelect(advertisement)">More Details</button>
+              <app-advertisement-viewer></app-advertisement-viewer>
               </div>
          </div>
 
         </div>
-      </div>
+      </div> 
 
     </div>
   </div>
