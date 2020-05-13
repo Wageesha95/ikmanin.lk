@@ -1,0 +1,219 @@
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Sell your Vehicle here!</h1>
+        <p class="lead">Welcome! Let's post your ad. Begin by filling the following data.</p>
+      </div>
+    </div>
+    <div class="container">
+
+        {{advertisement | json}}
+
+   <div>
+    <form #advertisementForm="ngForm">
+     <!--<form (ngSubmit)="onSubmit()" #advertisementForm="ngForm">--> 
+
+
+      <div class="form-group row">
+        <label for="category" class="col-6 col-form-label">Category</label>
+        <div class="col-6">
+          <select id="category" [(ngModel)]="advertisement.category"  name="category" class="custom-select" required="required">
+            <option>--Select--</option>
+            <option value="Bike">Bike</option>
+            <option value="Car">Car</option>
+            <option value="Van">Van</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Lorry">Lorry</option>
+            <option value="Bus">Bus</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="bio" class="col-6 col-form-label">Bio</label>
+        <div class="col-6">
+          <textarea id="bio" [(ngModel)]="advertisement.bio" name="bio" cols="40" rows="5" class="form-control" required="required"></textarea>
+        </div>
+      </div>
+      
+
+
+      <div class="form-group row">
+        <label for="price" class="col-6 col-form-label">Price</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Rs.</div>
+            </div>
+            <input id="price" [(ngModel)]="advertisement.price" name="price" placeholder="Enter the Price" type="text" class="form-control" required="required">
+          </div>
+        </div>
+      </div>
+      
+      
+
+      <div class="form-group row">
+        <label for="itemLocation" class="col-6 col-form-label">Location</label>
+        <div class="col-6">
+          <select id="itemLocation" name="itemLocation" class="custom-select" required="required">
+            <option value="Colombo">Colombo</option>
+            <option value="Gampaha">Gampaha</option>
+            <option value="Kalutara">Kalutara</option>
+            <option value="Kandy">Kandy</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="condition" class="col-6 col-form-label">Condition</label>
+        <div class="col-6">
+          <select id="condition" [(ngModel)]="advertisement.condition" name="condition" class="custom-select" required="required">
+            <option value="Brand New">Brand New</option>
+            <option value="Used">Used</option>
+            <option value="Reconditioned">Reconditioned</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="brand" class="col-6 col-form-label">Brand</label>
+        <div class="col-6">
+          <select id="brand" name="brand" [(ngModel)]="advertisement.brand" required="required" class="custom-select">
+              <option>--Select--</option>
+              <option value="Aprilia">Aprilia</option>
+              <option value="Bajaj">Bajaj</option>
+              <option value="BMW">BMW</option>
+              <option value="Chapper">Chapper</option>
+              <option value="Demak">Demak</option>
+              <option value="Haley Davison">Haley Davison</option>
+              <option value="Heer">Heero</option>
+              <option value="Honda">Honda</option>
+              <option value="Kineticd">Kinetic</option>
+              <option value="KTM">KTM</option>
+              <option value="Loncin">Loncin</option>
+              <option value="Mahindra">Mahindra</option>
+              <option value="Ranamoto">Ranamoto</option>
+              <option value="Royal Enfield">Royal Enfield</option>
+              <option value="Scooty">Scooty</option>
+              <option value="Suzuki">Suzuki</option>
+              <option value="TVS">TVS</option>
+              <option value="Vespa">Vespa</option>
+              <option value="Yamaha">Yamaha</option>
+              <option value="Other">*Other Brand</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="model" class="col-6 col-form-label">Model</label>
+        <div class="col-6">
+          <input id="model" [(ngModel)]="advertisement.model" name="model" placeholder="Enter the Model" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="modelYear" class="col-6 col-form-label">Model Year</label>
+        <div class="col-6">
+          <input id="modelYear" [(ngModel)]="advertisement.modelYear" name="modelYear" placeholder="2020" type="text" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="engineCapacity" class="col-6 col-form-label">Engine Capacity</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">cc</div>
+            </div>
+            <input id="engineCapacity" [(ngModel)]="advertisement.engineCapacity" name="engineCapacity" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="mileage" class="col-6 col-form-label">Mileage</label>
+        <div class="col-6">
+          <input id="mileage" [(ngModel)]="advertisement.mileage" name="mileage" placeholder="Enter the Mileage" type="text" class="form-control">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label class="col-6">Negotiability</label>
+        <div class="col-6">
+            <div class="form-check">
+                <input type="checkbox" [(ngModel)]="advertisement.negotiability" class="form-check-input" id="negotiability" value="true">
+                <label class="form-check-label" for="negotiability">Yes</label>
+              </div>
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="description " class="col-6 col-form-label">Description</label>
+        <div class="col-6">
+          <textarea id="description " [(ngModel)]="advertisement.description" name="description " cols="40" rows="5" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="contactName" class="col-6 col-form-label">Contact Name</label>
+        <div class="col-6">
+          <input id="contactName" [(ngModel)]="advertisement.contactName" name="contactName" type="text" class="form-control" required="required">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <label for="phoneNumber" class="col-6 col-form-label">Phone Number</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-phone"></i>
+              </div>
+            </div>
+            <input id="phoneNumber" [(ngModel)]="advertisement.phoneNumber" name="phoneNumber" type="text" class="form-control" required="required">
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="form-group row">
+        <label for="tags" class="col-6 col-form-label">Tags</label>
+        <div class="col-6">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text">
+                <i class="fa fa-hashtag"></i>
+              </div>
+            </div>
+            <input id="tags" [(ngModel)]="advertisement.tags" name="tags" placeholder="Enter your Tags here" type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+        <div class="form-group row">
+          <div class="offset-6 col-6">
+          <label for="exampleFormControlFile1">Upload Vehicle photo</label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+      </div>
+
+
+      <div class="form-group row">
+        <div class="offset-6 col-6">
+            <button class="btn btn-success" (click)=handleLogin()> SUBMIT </button>
+          <!--<button name="submit" type="submit" class="btn btn-primary">Submit</button>-->
+        </div>
+      </div>
+    </form>
+    </div>

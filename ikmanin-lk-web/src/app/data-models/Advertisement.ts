@@ -7,7 +7,7 @@ export class Advertisement{
 	 bio:String;
 	 price : Number;
 	 itemLocation : Location;
-	 photos : Array<ImageData>;
+	 photos : Array<String>;
 	 tags : Array<String>;
 	 condition : String;
 	 brand : String;
@@ -19,6 +19,6 @@ export class Advertisement{
 	 description : String;
 	 contactName : String;
      phoneNumber : String;
-     lastUpdatedTime: String;
-	 Status:Boolean;
+     lastUpdatedTime: string;
+	 status:Boolean;
 }
