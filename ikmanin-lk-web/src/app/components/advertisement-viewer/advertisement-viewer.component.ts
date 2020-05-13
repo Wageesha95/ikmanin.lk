@@ -32,7 +32,7 @@ description : 'This is a wider card with supporting text below as a natural lead
 contactName : 'Thilina',
 phoneNumber : '0112225558',
 lastUpdatedTime:'2019-06-15T16:51:08.681Z',
-Status:true
+status:true
 };
 
   constructor() { }

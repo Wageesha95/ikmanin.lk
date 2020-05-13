@@ -28,7 +28,7 @@ const Advertisements : Advertisement[] = [
  contactName : 'thilina',
  phoneNumber : '0112225558',
  lastUpdatedTime:'2019-06-15T16:51:08.681Z',
- Status:true
+ status:true
 	},
 	{
 		id : 'A01',
@@ -54,7 +54,7 @@ const Advertisements : Advertisement[] = [
  contactName : 'thilina',
  phoneNumber : '0112225558',
  lastUpdatedTime:'2019-06-15T16:51:08.681Z',
- Status:true
+ status:true
 	},{
 		id : 'A01',
  userId : 'U01',
@@ -79,7 +79,7 @@ const Advertisements : Advertisement[] = [
  contactName : 'thilina',
  phoneNumber : '0112225558',
  lastUpdatedTime:'2019-06-15T16:51:08.681Z',
- Status:true
+ status:true
 	}
 ];
 
@@ -92,20 +92,23 @@ export class AdvertisementsComponent implements OnInit {
 
  
   selectedAd:Advertisement;
-  advertisements = Advertisements;
-  
+  advertisements:Advertisement[];
   constructor(
 	private advertisementService : AdvertisementService
 	) { }
 
   ngOnInit(): void {
-
 		this.getAllAdvertisements();		
 	}
 	
-	getAllAdvertisements(){
-		console.log("abc");
-	//console.log(this.advertisementService.getAllAdvertisements());
+	getAllAdvertisements():void{
+		
+	this.advertisementService.getAllAdvertisements().subscribe(
+		(ads) => {
+			console.log(ads)
+			this.advertisements = ads
+		});
+	
 	}
 
   onSelect(selectedAdvertisement:Advertisement){

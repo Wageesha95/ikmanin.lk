@@ -29,7 +29,7 @@ public class Advertisement {
 	private String description;
 	private String contactName;
 	private String phoneNumber;
-	private String status;
+	private Boolean status;
 	private LocalDateTime createdTimestamp;
 	private LocalDateTime lastUpdatedTimestamp;
 
@@ -40,7 +40,7 @@ public class Advertisement {
 	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
-						 Boolean negotiability, String description, String contactName, String phoneNumber, String status,
+						 Boolean negotiability, String description, String contactName, String phoneNumber, Boolean status,
 						 LocalDateTime createdTimestamp, LocalDateTime lastUpdatedTimestamp) {
 		this.userId = userId;
 		this.category = category;
@@ -67,7 +67,7 @@ public class Advertisement {
 	public Advertisement(String userId, String category, String bio, int price, Location itemLocation,
 						 ArrayList<String> photos, ArrayList<String> tags, String condition, String brand,
 						 String model, Integer modelYear, Integer engineCapacity, Integer mileage,
-						 Boolean negotiability, String description, String contactName, String phoneNumber, String status,
+						 Boolean negotiability, String description, String contactName, String phoneNumber, Boolean status,
 						 LocalDateTime createdTimestamp) {
 		this.userId = userId;
 		this.category = category;
@@ -227,11 +227,11 @@ public class Advertisement {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public String getStatus() {
+	public Boolean getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Boolean status) {
 		this.status = status;
 	}
 

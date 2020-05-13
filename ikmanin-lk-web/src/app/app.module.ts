@@ -23,6 +23,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AdvertisementService } from './services/advertisement-services/advertisement.service';
 import { AdvertisementViewerComponent } from './components/advertisement-viewer/advertisement-viewer.component';
 import { AddNewComponent } from './components/add-new/add-new.component';
+import { FormsModule } from '@angular/forms';
+import { ViewChild } from '@angular/core';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { AddNewComponent } from './components/add-new/add-new.component';
     HomeComponent,
     AdvertisementViewerComponent,
     AddNewComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { AddNewComponent } from './components/add-new/add-new.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [AdvertisementService],
   bootstrap: [AppComponent]
